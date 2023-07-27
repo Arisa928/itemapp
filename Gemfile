@@ -28,9 +28,34 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# 環境変数設定
+gem 'dotenv-rails'
+# irbからpryへ変更
+gem 'pry-rails'
+# ログイン機能
+gem 'devise'
+# 国際化
+gem 'rails-i18n'
+# amazon s3
+gem 'aws-sdk-s3', require: false
+# ページネーションの実装のためのkaminari
+gem 'kaminari'
+# metaタグの設定
+gem 'meta-tags'
+# 検索機能
+gem 'ransack'
+# タグ付け機能
+gem 'acts-as-taggable-on'
+# 楽天API
+gem 'rakuten_web_service'
+# ダミーデータ生成
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
