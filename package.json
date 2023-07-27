@@ -1,24 +1,19 @@
 {
   "name": "itemapp",
-  "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "babel.config.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.4",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.4",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   },
+  "version": "0.1.0",
   "devDependencies": {
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
-  },
-  "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
-  },
-  "engines": {
-    "node": "15.x",
-    "npm": "9.x"
-  },
-  "author": "",
-  "license": "ISC"
+    "webpack-dev-server": "^3"
+  }
 }
