@@ -1,0 +1,14 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+#Rails用に最適化
+Rails:
+  Enabled: true
+
+#rubocopで検証したくないフォルダを指定
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'bin/*'
+    - 'db/seeds.rb'
+    - 'Gemfile'
