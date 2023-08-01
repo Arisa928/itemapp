@@ -38,7 +38,6 @@ jobs:
           name: Rspec
           command: bundle exec rspec
   heroku_deploy:
-    working_directory: ~/potepanec
     executor: heroku/default
     resource_class: small
     steps:
