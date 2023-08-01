@@ -12,10 +12,6 @@ jobs:
       - image: cimg/ruby:3.1-browsers
     steps:
       - checkout
-      - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
   rspec:
     docker:
       - image: cimg/ruby:3.1.4
@@ -31,9 +27,6 @@ jobs:
           POSTGRES_PASSWORD: ""
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
       - run:
           name: run rubocop
           command: bundle exec rubocop
@@ -54,11 +47,7 @@ jobs:
       PGPASSWORD: ""
       RAILS_ENV: test
     steps:
-      - browser-tools/install-browser-tools
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
       - run:
           name: rails db:migrate
           command: bundle exec rails db:migrate
