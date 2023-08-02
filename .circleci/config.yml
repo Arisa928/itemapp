@@ -19,9 +19,13 @@ jobs:
       - image: cimg/ruby:3.1.4
     steps:
       - checkout
+      - run: bundle config --local path vendor/bundle
+      - run:
+          name: bundle install
+          command: bundle check || bundle install --jobs=8 --clean
       - run:
           name: run rubocop
-          command: bundle exec rubocop
+          command: bundle exec rubocop --parallel
   test:
     parallelism: 3
     docker:
