@@ -1,6 +1,9 @@
 inherit_from:
   - .rubocop_airbnb.yml
 
+inherit_gem:
+  rubocop-discourse: default.yml
+
 #Rails用に最適化
 Rails:
   Enabled: true
@@ -12,3 +15,4 @@ AllCops:
     - 'bin/*'
     - 'db/seeds.rb'
     - 'Gemfile'
+    - 'vendor/**/*'
