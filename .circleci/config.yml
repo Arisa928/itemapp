@@ -25,7 +25,7 @@ jobs:
           command: bundle check || bundle install --jobs=8 --clean
       - run:
           name: run rubocop
-          command: bundle exec rubocop --parallel
+          command: bundle exec rubocop 
       - save_cache:
           key: gemfiles-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
           paths:
