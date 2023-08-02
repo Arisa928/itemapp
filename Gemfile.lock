@@ -276,9 +276,6 @@ GEM
       rubocop-rspec (~> 2.0.0)
     rubocop-ast (1.29.0)
       parser (>= 3.2.1.0)
-    rubocop-discourse (3.3.0)
-      rubocop (>= 1.1.0)
-      rubocop-rspec (>= 2.0.0)
     rubocop-performance (1.10.2)
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -376,7 +373,6 @@ DEPENDENCIES
   ransack
   rspec-rails
   rubocop-airbnb
-  rubocop-discourse
   sass-rails (>= 6)
   selenium-webdriver
   spring
