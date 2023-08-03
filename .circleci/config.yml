@@ -1,19 +1,21 @@
-version: 2
+version: 2.1
 
 orbs:
   heroku: circleci/heroku@2.0
 
 jobs:
-  build:
+  rspec:
     docker:
       - image: cimg/ruby:3.1.4
     steps:
       - checkout
-  rspec:
-    docker:
-      - image: cimg/ruby:3.1.4
+      - run:
+          name: bundle install
+          command: bundle install 
+      - run: 
+          name: Run rspec
+          command: bundle exec rspec
   rubocop:
-    parallelism: 3
     docker:
       - image: cimg/ruby:3.1.4
     steps:
@@ -25,22 +27,8 @@ jobs:
       - run:
           name: run rubocop
           command: bundle exec rubocop 
-  test:
-    parallelism: 3
-    docker:
-      - image: cimg/ruby:3.1.4
-    steps:
-      - checkout
-      - run:
-          name: rails db:migrate
-          command: bundle exec rails db:migrate
-      - run:
-          name: Database setup
-          command: bundle exec rails db:schema:load --trace
-      - run:
-          name: Rspec
-          command: bundle exec rspec
   heroku_deploy:
+    executor: heroku/default
     steps:
       - checkout
       - heroku/install
@@ -53,8 +41,7 @@ jobs:
             heroku run bin/rails db:migrate -a $HEROKU_APP_NAME
 
 workflows:
-  version: 2
-  build:
+  build-deploy:
     jobs:
       - rspec
       - rubocop
