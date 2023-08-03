@@ -23,4 +23,3 @@ test:
 production:
   <<: *default
   url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
-

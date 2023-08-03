@@ -12,7 +12,6 @@ jobs:
   rspec:
     docker:
       - image: cimg/ruby:3.1.4
-    resource_class: small
   rubocop:
     parallelism: 3
     docker:
