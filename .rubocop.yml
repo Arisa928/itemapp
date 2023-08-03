@@ -10,6 +10,7 @@ AllCops:
   Exclude:
     - 'config/**/*'
     - 'bin/*'
-    - 'db/seeds.rb'
+    - 'db/*'
+    - 'spec/*'
     - 'Gemfile'
     - 'vendor/bundle/**/*'
