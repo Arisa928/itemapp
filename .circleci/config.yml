@@ -9,6 +9,9 @@ jobs:
       - image: cimg/ruby:3.1.4
     steps:
       - checkout
+      - run:
+          name: bundle install
+          command: bundle install 
       - run: 
           name: Run rspec
           command: bundle exec rspec
