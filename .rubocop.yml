@@ -15,5 +15,4 @@ AllCops:
     - 'bin/*'
     - 'db/seeds.rb'
     - 'Gemfile'
-    - 'vendor/**/*'
     - 'vendor/bundle/**/*'

@@ -26,10 +26,6 @@ jobs:
       - run:
           name: run rubocop
           command: bundle exec rubocop 
-      - save_cache:
-          key: gemfiles-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
   test:
     parallelism: 3
     docker:
