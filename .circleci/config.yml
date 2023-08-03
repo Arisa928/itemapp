@@ -41,6 +41,7 @@ jobs:
           name: Rspec
           command: bundle exec rspec
   heroku_deploy:
+    executor: heroku/default
     steps:
       - checkout
       - heroku/install
