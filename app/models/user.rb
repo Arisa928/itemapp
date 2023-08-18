@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  extend Devise::Models
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   MAX_USER_NAME_LENGTH = 20
 
   has_many :gadgets, dependent: :destroy
