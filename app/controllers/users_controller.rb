@@ -24,14 +24,14 @@ class UsersController < ApplicationController
       format.js
     end
   end
-  def show_mygadgets
+  def show_myitems
     @user = User.find(params[:id])
     @items = @user.items
   end
 
   def show_favorites
     @user = User.find(params[:id])
-    @items = Gadget.joins(:likes).where(likes: { user_id: @user.id }).order('likes.created_at DESC')
+    @items = item.joins(:likes).where(likes: { user_id: @user.id }).order('likes.created_at DESC')
 
   end
 

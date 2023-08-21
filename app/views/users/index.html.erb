@@ -1,2 +1,21 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% content_for :title, "ユーザー一覧" %>
+<div class="container">
+  <h2 class="form-title">ユーザー一覧</h2>
+  <div class="d-flex">
+    <div class="btn-group dropdown ms-auto">
+      <button class="btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        並び替え
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to "新着順", users_path(order: 'new'), class: "dropdown-item text-dark active", id: "new_order", remote: true %></li>
+        <li><%= link_to "古い順", users_path(order: 'older'), class: "dropdown-item text-dark", id: "older_order", remote: true %></li>
+        <li><%= link_to "人気順", users_path(order: 'ranking'), class: "dropdown-item text-dark", id: "ranking_order", remote: true %></li>
+        <li><%= link_to "昇順(ユーザー名)", users_path(order: 'name_asc'), class: "dropdown-item text-dark", id: "name_asc_order", remote: true %></li>
+        <li><%= link_to "降順(ユーザー名)", users_path(order: 'name_desc'), class: "dropdown-item text-dark", id: "name_desc_order", remote: true %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lists">
+    <%= render 'shared/users_index_order', users: @users %>
+  </div>
+</div>

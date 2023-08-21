@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @item = Item.find(params[:gadget_id])
+    @item = Item.find(params[:item_id])
     @like = current_user.likes.create(item_id: params[:item_id])
     @custom_view = params[:custom_view]
     @like.save

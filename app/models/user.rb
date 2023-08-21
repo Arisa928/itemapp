@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   MAX_USER_NAME_LENGTH = 20
 
-  has_many :gadgets, dependent: :destroy
+  has_many :items, dependent: :destroy
   has_one_attached :avatar
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy

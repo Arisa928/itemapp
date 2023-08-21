@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to gadget_url(@item), notice: "新規アイテムを登録しました"
+      redirect_to item_url(@item), notice: "新規アイテムを登録しました"
     else
       render :new
     end
@@ -87,7 +87,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:gadget).permit(:user_id, :name, :start_date, :category_list, :reason, :point, :usage, :image, :rakuten_url).merge(user_id:current_user.id)
+      params.require(:item).permit(:user_id, :name, :start_date, :category_list, :reason, :point, :usage, :image, :rakuten_url).merge(user_id:current_user.id)
     end
 
     def ensure_correct_user

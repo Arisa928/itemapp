@@ -1,0 +1,127 @@
+<% content_for :title, "#{@item.user.name}さんの#{@item.name}" %>
+<div class="container mt-5">
+  <div class="responsive-container-720">
+    <div class="d-flex justify-content-between align-items-center">
+      <%= link_to myitems_user_path(@item.user.id) do %>
+        <div class="info-container">
+          <div class="icon-image-md">
+            <%= user_avatar_image_tag(@item.user) %>
+          </div>
+          <div class="user-name-and-creationdate-md">
+            <p class="user-name-md"><%= @item.user.name %></p>
+            <p class="creationdate-md"><%= @item.created_at.to_s(:default) %></p>
+          </div>
+        </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <div id="follow-form-<%= @item.user.id %>">
+          <%= render 'shared/follow-and-unfollow', user: @item.user %>
+        </div>
+      <% end %>
+    </div>
+    <% if @item.image.present? %>
+      <div class="item-image-lg">
+        <%= image_tag @item.image %>
+      </div>
+    <% end %>
+    <%# いいね %>
+    <div class="likes d-flex fs-3" id="likes-<%= @item.id %>">
+      <%= render partial: 'shared/likes_and_liked_users', locals: {item: @item} %>
+    </div>
+
+    <div class="item-details-container">
+      <div class="item-detail">
+        <p class="category">アイテム名</p>
+        <p class="content"><%= @item.name %></p>
+      </div>
+      <div class="item-detail">
+        <p class="category">カテゴリー</p>
+        <p class="content">
+          <% @item.category_list.each do |category| %>
+            <i class="fa-solid fa-tag" style="color: #393e46;"></i><%= link_to category, searches_path(q: category, model: 'categories'), class: "me-3" %>
+          <% end %>
+        </p>
+      </div>
+      <div class="item-detail">
+        <p class="category">使用開始日</p>
+        <P class="content"><%= @item.start_date %></P>
+      </div>
+      <div class="item-detail">
+        <p class="category">推しポイント</p>
+        <P class="content"><%= safe_join(@item.point.split("\n"),tag(:br)) %></P>
+      </div>
+      <div class="item-detail">
+        <p class="category">使用用途</p>
+        <P class="content"><%= safe_join(@item.usage&.split("\n") || [], tag(:br)) %></P>
+      </div>
+      <div class="item-detail">
+        <p class="category">選んだ理由</p>
+        <P class="content"><%= safe_join(@item.reason&.split("\n") || [], tag(:br)) %></P>
+      </div>
+      <% if @item.rakuten_url.present? %>
+        <div class="item-detail mt-5 d-grid col-8 mx-auto">
+          <%= link_to @item.rakuten_url, class: "btn btn-danger fs-4" do %>
+            <span class="text-light">楽天で購入する</span><i class="fa-solid fa-arrow-up-right-from-square ms-2" style="color: #f7f7f7;"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <% if current_user && @item.user_id == current_user.id %>
+      <div class="edit-btn-container">
+        <%= link_to '編集する', edit_item_path(@item), class: "btn edit-btn" %>
+      </div>
+    <% end %>
+
+    <div class="comments-container">
+      <div class="comments-title justify-content-between d-flex align-items-center border-start border-dark border-5 ps-1 mb-4">
+        <div class="d-flex align-items-center">
+          <h4 class="mb-0 fs-2">コメント</h4>
+          <P class="ms-3 fs-5">全<%= @item.comments.count %>件</P>
+        </div>
+        <div>
+          <% if @item.comments.count >= 6 %>
+            <%= link_to "コメントを全て見る", item_comments_path(@item.id), class: "fs-5 text-secondary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="comments">
+        <% @comments.each do |comment| %>
+          <div class="comment mb-4">
+            <div class="d-flex justify-content-between mb-2">
+              <div class="d-flex align-items-center">
+                <div class="icon-image-sm">
+                  <%= user_avatar_image_tag(comment.user) %>
+                </div>
+                <div class="user-name-and-creationdate-sm">
+                  <p class="user-name-sm"><%= comment.user.name %></p>
+                  <p class="creationdate-sm"><%= comment.created_at.to_s(:default) %></p>
+                </div>
+              </div>
+              <div class="d-flex align-items-end">
+                <% if comment.user == current_user %>
+                  <%= link_to "削除", item_comment_path(comment.item, comment), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                <% end %>
+              </div>
+            </div>
+            <P class="ps-2 fs-5"><%= safe_join(comment.content.split("\n"),tag(:br)) %></P>
+          </div>
+        <% end %>
+      </div>
+
+      <% if user_signed_in? %>
+        <%= form_with(model: [ @item, @comment ], local: true) do |form| %>
+          <%= render "devise/shared/error_messages", resource: @comment %>
+          <div class="row mt-5">
+            <div class="col-10 col-md-11">
+              <%= form.text_area :content, rows: 1, class: "form-control h-100", id: "comment-input" %>
+            </div>
+            <div class="col-2 col-md-1 d-flex align-items-center">
+              <%= form.submit "送信", class: "btn btn-secondary text-light fw-bold fs-5 h-100", id: "submit-button" %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

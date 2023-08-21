@@ -4,7 +4,7 @@
       <h1>gamers item!</h1>
     </div>
     <div class="description">
-      <p>自分の推しのガジェットを共有しよう</P>
+      <p>自分の推しのアイテムを共有しよう</P>
     </div>
   </div>
 </div>
@@ -134,12 +134,12 @@
                 </div>
               <% end %>
             </div>
-            <div class="gadget-image-sm">
+            <div class="item-image-sm">
               <div class="row">
                 <% user.items.each do |item| %>
                   <% if item.image.present? %>
                     <div class="col-3 my-2">
-                      <%= link_to gadget_path(item.id) do %>
+                      <%= link_to item_path(item.id) do %>
                         <%= image_tag item.image %>
                       <% end %>
                     </div>
