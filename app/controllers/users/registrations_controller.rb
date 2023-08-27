@@ -17,7 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       case params[:form_type]
       when 'profile_edit'
-        render 'users/edit_profile' and return
+        render 'users/edit' and return
       when 'account_edit'
         render :edit and return
       end

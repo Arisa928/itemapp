@@ -44,7 +44,7 @@ gem 'kaminari'
 gem 'meta-tags'
 # 検索機能
 gem 'ransack'
-# タグ付け機能
+# タグ管理機能
 gem 'acts-as-taggable-on'
 # 楽天API
 gem 'rakuten_web_service'

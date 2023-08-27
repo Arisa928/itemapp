@@ -10,17 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_14_040131) do
+ActiveRecord::Schema.define(version: 2023_08_21_063515) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
+    t.text "content", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_comments_on_item_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.date "start_date"
     t.string "category"
     t.text "detail"
-    t.bigint "user_id"
     t.string "rakuten_url"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_likes_on_item_id"
+    t.index ["user_id", "item_id"], name: "index_likes_on_user_id_and_item_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -68,5 +89,10 @@ ActiveRecord::Schema.define(version: 2023_08_14_040131) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "items"
+  add_foreign_key "comments", "users"
+  add_foreign_key "items", "users"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
   add_foreign_key "taggings", "tags"
 end

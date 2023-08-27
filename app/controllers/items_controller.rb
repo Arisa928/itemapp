@@ -67,11 +67,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def liked_users
-    @item = Item.find(params[:id])
-    @users = User.joins(:likes).where(likes: { item_id: @item.id }).order('likes.created_at DESC').page(params[:page])
-  end
-
   def search_rakuten
     if params[:q].present?
       @rakuten_items = RakutenWebService::Ichiba::Item.search(keyword: params[:q])
