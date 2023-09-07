@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2023_08_21_063515) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -28,15 +31,13 @@ ActiveRecord::Schema.define(version: 2023_08_21_063515) do
     t.string "category"
     t.text "detail"
     t.string "rakuten_url"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_likes_on_item_id"
@@ -45,11 +46,11 @@ ActiveRecord::Schema.define(version: 2023_08_21_063515) do
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer "tag_id"
+    t.bigint "tag_id"
     t.string "taggable_type"
-    t.integer "taggable_id"
+    t.bigint "taggable_id"
     t.string "tagger_type"
-    t.integer "tagger_id"
+    t.bigint "tagger_id"
     t.string "context", limit: 128
     t.datetime "created_at"
     t.string "tenant", limit: 128
@@ -91,7 +92,6 @@ ActiveRecord::Schema.define(version: 2023_08_21_063515) do
 
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
-  add_foreign_key "items", "users"
   add_foreign_key "likes", "items"
   add_foreign_key "likes", "users"
   add_foreign_key "taggings", "tags"

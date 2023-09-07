@@ -1,0 +1,9 @@
+# Query: node-sass
+# Flags: WordMatch
+# ContextLines: 1
+
+1 result - 1 file
+
+package-lock.json:
+  9620          "fibers": ">= 3.1.0",
+  9622          "sass": "^1.3.0",
