@@ -9,7 +9,6 @@
       <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="dropdownMenuButton1">
         <li><%= link_to "新着順", users_path(order: 'new'), class: "dropdown-item text-dark active", id: "new_order", remote: true %></li>
         <li><%= link_to "古い順", users_path(order: 'older'), class: "dropdown-item text-dark", id: "older_order", remote: true %></li>
-        <li><%= link_to "人気順", users_path(order: 'ranking'), class: "dropdown-item text-dark", id: "ranking_order", remote: true %></li>
         <li><%= link_to "昇順(ユーザー名)", users_path(order: 'name_asc'), class: "dropdown-item text-dark", id: "name_asc_order", remote: true %></li>
         <li><%= link_to "降順(ユーザー名)", users_path(order: 'name_desc'), class: "dropdown-item text-dark", id: "name_desc_order", remote: true %></li>
       </ul>

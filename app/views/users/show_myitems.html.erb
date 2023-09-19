@@ -31,9 +31,6 @@
       <div class="col">
         <p class="current-page text-center"><span>My Item</span></p>
       </div>
-      <div class="col">
-        <p class="link-page text-center"><%= link_to "お気に入り", favorites_user_path(@user.id) %></p>
-      </div>
     </div>
     <div class="myitem-lists">
       <%# １商品に複数カテゴリーの場合でも１カテゴリー毎に表示 %>
@@ -51,11 +48,8 @@
               <div class="item-name">
                 <h5><%= item.name %></h5>
               </div>
-              <%# いいねとコメント %>
+              <%# コメント %>
                 <div class="likes-and-comments-container d-flex fs-4">
-                  <div class="likes" id="likes-<%= item.id %>">
-                    <%= render partial: 'shared/likes', locals: {item: item} %>
-                  </div>
                   <div class="comments">
                     <%= link_to item_comments_path(item.id), class: "ms-5" do %>
                       <i class="fa-regular fa-message me-2" style="color: #393e46;"></i> <span><%= item.comments.count %></span>
