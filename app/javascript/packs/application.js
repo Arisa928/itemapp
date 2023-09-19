@@ -72,11 +72,11 @@ document.addEventListener('turbolinks:load', initializeCommentFormValidation);
 
 // 検索結果ページにて検索対象タブ（投稿orユーザー）を保存しておくために、検索モデルをhidden_fieldにセット
 $(document).on('turbolinks:load', function() {
-  $('#gadget-link, #user-link, #category-link').on('click', function(e) {
+  $('#item-link, #user-link, #category-link').on('click', function(e) {
     var model;
     switch ($(this).attr('id')) {
-      case 'gadget-link':
-        model = 'gadgets';
+      case 'item-link':
+        model = 'items';
         break;
       case 'user-link':
         model = 'users';
@@ -108,7 +108,7 @@ $(document).on('click', '.rakuten-add-button', function(e) {
   var selectedRakutenUrl = $(this).data('url');
 
   // hidden_field に選択した楽天URLを設定
-  $('#gadget_rakuten_url').val(selectedRakutenUrl);
+  $('#item_rakuten_url').val(selectedRakutenUrl);
 
   // "選択された楽天リンク"表示部分にURLを表示
   $('#rakuten_url_text').text(selectedRakutenUrl);
@@ -128,7 +128,7 @@ $(document).on('click', '#remove_rakuten_url_button', function(e) {
   $('#rakuten_url_text').text('なし');
 
   // hidden_field の値も空にする
-  $('#gadget_rakuten_url').val('');
+  $('#item_rakuten_url').val('');
 
   // 削除ボタンを非表示にする
   $(this).hide();
@@ -136,7 +136,7 @@ $(document).on('click', '#remove_rakuten_url_button', function(e) {
 
 // ガジェット編集ページ表示時に、楽天URLが設定されている場合に削除ボタンを表示する
 $(document).on('turbolinks:load', function() {
-  var selectedRakutenUrl = $('#gadget_rakuten_url').val()
+  var selectedRakutenUrl = $('#item_rakuten_url').val()
 
   if (selectedRakutenUrl && selectedRakutenUrl !== 'なし') {
     $('#remove_rakuten_url_button').show();

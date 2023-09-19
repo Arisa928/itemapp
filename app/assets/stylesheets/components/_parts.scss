@@ -1,0 +1,240 @@
+// ガジェット／ユーザー一覧の共通
+.lists {
+  margin: 15px 0;
+
+  .list-item {
+    background-color: #929AAB;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+// ガジェット（ユーザー名+ガジェット）一覧
+.post-container {
+  display: flex;
+  justify-content: space-between;
+
+  .item-name {
+    font-size: 1.7rem;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    padding-left: 5px;
+  }
+
+  .item-category {
+    border-radius: 20px;
+    display: inline-block;
+    background-color: #929AAB;
+    padding: 2px 10px;
+    font-size: 1.2rem;
+    margin-left: 5px;
+
+    a {
+      color: #F7F7F7;
+    }
+  }
+
+  .likes-and-comments-container {
+    padding-left: 7px;
+    margin-top: 8px;
+  }
+}
+
+// ガジェット画像（小）
+.item-image-sm {
+  margin: 12px 0;
+  padding: 0 4px;
+
+  a {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 95px;
+  }
+}
+
+// ガジェット画像（中）
+.item-image-md {
+  width: 38%;
+  height: 132px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// アイコン画像（小）
+.icon-image-sm {
+  display: block;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  // overflow: hidden;
+
+  img {
+    display: block;
+    width: 37px;
+    height: 37px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+// アイコン画像（中）
+.icon-image-md {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+// アイコン画像（大）＋ユーザー名
+.icon-image-lg {
+
+  img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+}
+
+// ユーザー情報共通
+.info-container {
+  display: flex;
+  align-items: center;
+}
+
+// ユーザー情報（ユーザ名＋投稿日時）（小）
+.user-name-and-creationdate-sm {
+  margin-left: 8px;
+
+  .user-name-sm {
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  .creationdate-sm {
+    font-size: 1rem;
+  }
+}
+
+// ユーザー情報（ユーザ名＋投稿日時）（中）
+.user-name-and-creationdate-md {
+  margin-left: 8px;
+
+  .user-name-md {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .creationdate-md {
+    font-size: 1.3rem;
+  }
+}
+
+// ユーザー情報（ユーザー名）
+.user-name-only {
+  margin-left: 10px;
+
+  .user-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+// ガジェット詳細情報
+.item-details-container {
+  margin: 20px 0 35px 0;
+
+  .item-detail {
+    margin-bottom: 10px;
+
+    .category {
+      border: 1px solid #393E46;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #F7F7F7;
+      background-color: #929AAB;
+      padding: 2px 4px;
+      font-size: 1.4rem;
+    }
+
+    .content {
+      border: 1px solid #393E46;
+      border-radius: 5px;
+      // font-weight: bold;
+      color: #393E46;
+      padding: 6px 4px;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+// 画面幅500px以上の場合
+@media screen and (min-width:500px) {
+
+  .item-image-sm {
+
+    img {
+      height: 115px;
+    }
+  }
+}
+
+// 画面幅768px以上の場合
+@media screen and (min-width:768px) {
+
+  .responsive-container-540 {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .responsive-container-720 {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+// 画面幅768px~991pxの場合
+@media screen and (min-width:768px) and ( max-width:991px) {
+
+  .item-image-sm {
+
+    img {
+      height: 85px;
+    }
+  }
+}
+
+
+// 画面幅1400px以上の場合
+@media screen and (min-width:1400px) {
+
+  .item-image-sm {
+
+    img {
+      height: 85px;
+    }
+  }
+}

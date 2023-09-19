@@ -1,0 +1,57 @@
+.user-info-and-link-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inroduction {
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
+}
+
+.mypage-link-lists {
+  font-size: 1.8rem;
+  margin: 50px 0 40px 0;
+
+  .current-page {
+    font-weight: bold;
+  }
+
+  span {
+    border-bottom: 3px solid #393E46;
+  }
+}
+
+.myitem-lists {
+
+  .category-container {
+    margin: 40px 0;
+
+    h4 {
+      font-size: 1.8rem;
+      margin: 10px 0;
+      border-left: 4px solid #393E46;
+      padding-left: 3px;
+    }
+  }
+
+  .myitem-detail {
+    background-color: #929AAB;
+    padding: 8px;
+
+    .item-image {
+      img {
+        width: 100%;
+        height: 40vw;
+      }
+    }
+
+    .item-name {
+      margin: 10px 0;
+
+      h5 {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

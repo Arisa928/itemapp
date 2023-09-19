@@ -1,0 +1,109 @@
+.title {
+  background-image: url('background_image.jpg');
+  background-size: cover;
+  background-position: right;
+  color: #393E46;
+  height: 400px;
+
+  .wrapper {
+    background-color: rgba(229, 229, 229, 0.706);
+    padding: 0 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .app-name {
+      text-align: center;
+      margin-bottom: 80px;
+
+      h1 {
+        font-size: 5.6rem;
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-size: 2.4rem;
+      }
+    }
+
+    .description {
+      text-align: center;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// 検索欄
+.search-border {
+  width: 60%;
+  margin: 0 auto 0;
+}
+
+// 一覧部分タイトル
+.lists-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  a {
+    color: #679EF1;
+    font-size: 1.2rem;
+  }
+}
+
+
+// 画面幅500px以上の場合
+@media screen and (min-width:500px) {
+
+  .item-image-md {
+    width: 45%;
+    height: 132px;
+  }
+}
+
+// 画面幅768px以上の場合
+@media screen and (min-width:768px) {
+
+  .title {
+    height: 500px;
+
+    .wrapper {
+      .app-name {
+        h1 {
+          font-size: 8.8rem;
+        }
+
+        h4 {
+          font-size: 4.0rem;
+        }
+      }
+
+      .description {
+        p {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  .lists-title {
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}

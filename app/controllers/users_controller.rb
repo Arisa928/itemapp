@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       format.js
     end
   end
+  
   def show_myitems
     @user = User.find(params[:id])
     @items = @user.items

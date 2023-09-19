@@ -1,0 +1,106 @@
+// 一覧の詳細へのリンクボタン
+.detail-link-container {
+  padding: 0 15px;
+  margin: 10px 0;
+
+  .detail-link {
+    display: block;
+    background-color: #393E46;
+    text-align: center;
+    border-radius: 5px;
+    color: #929AAB;
+    font-size: 1.3rem;
+  }
+}
+
+// 一覧ページへのリンクボタン
+.list-link-container {
+  // padding: 0 15px;
+
+  .list-link {
+    display: block;
+    background-color: #929AAB;
+    text-align: center;
+    padding: 12px 0;
+    color: #393E46;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+// formのボタン
+.actions {
+
+  .btn {
+    background-color: #393E46;
+    color: #F7F7F7;
+    height: 4.5rem;
+    font-size: 2rem;
+    font-weight: 550;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+  }
+}
+
+// ガジェット詳細画面の編集ボタン
+.edit-btn-container {
+  padding: 0 25px;
+
+  .edit-btn {
+    display: block;
+    background-color: #393E46;
+    text-align: center;
+    border-radius: 5px;
+    color: #929AAB;
+    font-size: 1.5rem;
+    padding: 8px 0;
+  }
+}
+
+// マイページのプロフィール編集ボタン
+.edit-profile-btn-container {
+
+  .edit-profile-btn {
+    background-color: #929AAB;
+    text-align: center;
+    border-radius: 5px;
+    color: #F7F7F7;
+    font-size: 1.1rem;
+    padding: 3px 9px;
+  }
+}
+
+// ガジェットの新規登録ボタン
+.item-new-registration-btn-container {
+  text-align: right;
+
+  .item-new-registration-btn {
+    background-color: #929AAB;
+    text-align: center;
+    border-radius: 30px;
+    color: #F7F7F7;
+    font-size: 1.2rem;
+    font-weight: 550;
+    padding: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 990;
+  }
+}
+
+// ガジェット削除／アカウント削除のリンク（ボタン）
+.delete-button:hover {
+  opacity: 0.7;
+}
+
+// フォローボタン
+.follow-btn:hover {
+  background-color: #F7F7F7;
+  color: #393E46;
+  opacity: 0.7;
+}
