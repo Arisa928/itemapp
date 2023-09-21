@@ -1,0 +1,50 @@
+<div class="lists">
+  <div class="row g-4">
+    <% items&.each do |item| %>
+      <div class="col-md-6 col-xxl-4">
+        <div class="list-item">
+          <div class="post-container">
+            <div class="content">
+              <%= link_to myitems_user_path(item.user.id) do %>
+                <div class="info-container">
+                  <div class="icon-image-sm">
+                    <%= user_avatar_image_tag(item.user) %>
+                  </div>
+                  <div class="user-name-and-creationdate-sm">
+                    <p class="user-name-sm"><%= item.user.name %></p>
+                    <p class="creationdate-sm"><%= item.created_at.to_s(:default) %></p>
+                  </div>
+                </div>
+              <% end %>
+              <p class="item-name"><%= item.name %></p>
+              <% item.category_list.each do |category| %>
+                <p class="item-category">
+                  <%= link_to category, searches_path(q: category, model: 'categories') %>
+                </p>
+              <% end %>
+              <%# いいねとコメント %>
+              <div class="likes-and-comments-container d-flex fs-4">
+                <div class="likes" id="likes-<%= item.id %>">
+                  <%= render partial: 'shared/likes', locals: {item: item} %>
+                </div>
+                <div class="comments" id="comments-<%= item.id %>">
+                  <%= link_to item_comments_path(item.id), class: "comment-button ms-5" do %>
+                    <i class="fa-regular fa-message me-2" style="color: #393e46;"></i> <span><%= item.comments.count %></span>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% if item.image.present? %>
+              <div class="item-image-md">
+                <%= image_tag item.image %>
+              </div>
+            <% end %>
+          </div>
+          <div class="detail-link-container">
+            <%= link_to "投稿詳細へ", item_path(item), class: "btn detail-link" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  </div>

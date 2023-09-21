@@ -1,0 +1,24 @@
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light px-4">
+    <div class="container-fluid">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "logo.jpg", size: "130x40" %>
+      <% end %>
+      <div class="avatar-wrapper">
+        <a class="avatar-link" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= user_avatar_image_tag(current_user, class: "rounded-circle", size: "40x40") %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <li><%= link_to "マイページ", myitems_user_path(current_user.id), class: "dropdown-item" %></li>
+          <li><%= link_to "アイテム投稿", new_item_path, class: "dropdown-item" %></li>
+          <li><%= link_to "ユーザー一覧", users_path, class: "dropdown-item" %></li>
+          <li><%= link_to "投稿一覧", items_path, class: "dropdown-item" %></li>
+          <li><%= link_to "アカウント情報", account_user_path(current_user.id), class: "dropdown-item" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, class: "dropdown-item", method: :delete %></li>
+          <li><%= link_to "お問い合わせ", contact_path, class: "dropdown-item" %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr>
+</header>
