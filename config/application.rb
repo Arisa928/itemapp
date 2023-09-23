@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Itemapp
   class Application < Rails::Application
+    # AWSのリージョンの設定
+    require 'aws-sdk-core'
+    Aws.config.update({
+      region: ENV['AWS_REGION']
+    })
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -19,5 +24,13 @@ module Itemapp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
+    # 画像関係
+    config.active_storage.variant_processor = :vips
+    # 日本時間に設定
+    config.time_zone = 'Tokyo'
+    config.to_prepare do
+      Time::DATE_FORMATS[:default] = "%Y年%m月%d日 %H:%M"
+      Date::DATE_FORMATS[:default] = "%Y年%m月%d日"
+    end
   end
 end

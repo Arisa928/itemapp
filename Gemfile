@@ -22,8 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+# 画像まわり
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -40,7 +40,7 @@ gem 'devise'
 gem 'rails-i18n'
 # amazon s3
 gem 'aws-sdk-s3', require: false
-# ページネーションの実装のためのkaminari
+# ページネーション用kaminari
 gem 'kaminari'
 # metaタグの設定
 gem 'meta-tags'

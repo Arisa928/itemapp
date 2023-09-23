@@ -6,16 +6,16 @@ class Item < ApplicationRecord
   acts_as_taggable_on :categories
 
   validates :name, presence: true
-  validates :point, presence: true
+  validates :detail, presence: true
 
   # いいね済かどうかの判定
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
 
-  # 検索対象カラムの設定
+  # 検索対象の設定
   def self.ransackable_attributes(auth_object = nil)
-    %w[name reason usage point]
+    %w[name detail]
   end
 
   # 検索対象の関連テーブルの設定

@@ -2,7 +2,6 @@
 <div class="container mt-80">
   <div class="responsive-container-540">
     <h2 class="form-title">アイテムを登録</h2>
-
     <%= form_with model: @item,url: items_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: @item %>
       <div class="field mb-5">

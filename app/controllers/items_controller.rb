@@ -82,7 +82,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:user_id, :name, :start_date, :category_list, :reason, :point, :usage, :image, :rakuten_url).merge(user_id:current_user.id)
+      params.require(:item).permit(:user_id, :name, :start_date, :category_list, :detail, :image, :rakuten_url).merge(user_id:current_user.id)
     end
 
     def ensure_correct_user

@@ -13,11 +13,6 @@
           </div>
         </div>
       <% end %>
-      <% if user_signed_in? %>
-        <div id="follow-form-<%= @item.user.id %>">
-          <%= render 'shared/follow-and-unfollow', user: @item.user %>
-        </div>
-      <% end %>
     </div>
     <% if @item.image.present? %>
       <div class="item-image-lg">
@@ -47,16 +42,8 @@
         <P class="content"><%= @item.start_date %></P>
       </div>
       <div class="item-detail">
-        <p class="category">推しポイント</p>
-        <P class="content"><%= safe_join(@item.point.split("\n"),tag(:br)) %></P>
-      </div>
-      <div class="item-detail">
-        <p class="category">使用用途</p>
-        <P class="content"><%= safe_join(@item.usage&.split("\n") || [], tag(:br)) %></P>
-      </div>
-      <div class="item-detail">
-        <p class="category">選んだ理由</p>
-        <P class="content"><%= safe_join(@item.reason&.split("\n") || [], tag(:br)) %></P>
+        <p class="category">詳細</p>
+        <P class="content"><%= safe_join(@item.detail.split("\n"),tag(:br)) %></P>
       </div>
       <% if @item.rakuten_url.present? %>
         <div class="item-detail mt-5 d-grid col-8 mx-auto">

@@ -13,7 +13,7 @@ module ApplicationHelper
       title: 'ゲーマーにおすすめのアイテムを共有できるサービス',
       reverse: true,
       separator: '|',
-      description: '「Gamers Item」は、ゲーマーにおすすめのアイテムを共有できるサービスです。',
+      description: 'Gamers Itemは、ゲーマーにおすすめのアイテムを共有できるサービスです。',
       keywords: 'Gamers Item, Gamer, ゲーマー',
       charset: 'UTF-8',
       canonical: request.original_url,
