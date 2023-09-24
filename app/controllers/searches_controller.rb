@@ -7,9 +7,9 @@ class SearchesController < ApplicationController
       when 'users'
         @users = User.ransack(name_or_introduction_cont: @q).result(distinct: true)
       when 'items'
-        @items = item.ransack(name_or_detail_cont: @q).result(distinct: true)
+        @items = Item.ransack(name_or_detail_cont: @q).result(distinct: true)
       when 'categories'
-        @items = item.tagged_with(@q)
+        @items = Item.tagged_with(@q)
       end
     end
     respond_to do |format|

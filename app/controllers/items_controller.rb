@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destory]
+  before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+
   def top
     @items = Item.all.order('created_at DESC').limit(9)
     @users = User.all.order('created_at DESC').limit(9)
@@ -65,6 +69,11 @@ class ItemsController < ApplicationController
       format.html { redirect_to myitems_user_path(current_user.id), notice: "アイテムを削除しました" }
       format.json { head :no_content }
     end
+  end
+
+  def liked_users
+    @item = Item.find(params[:id])
+    @users = User.joins(:likes).where(likes: { item_id: @item.id }).order('likes.created_at DESC').page(params[:page])
   end
 
   def search_rakuten

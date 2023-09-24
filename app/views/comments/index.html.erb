@@ -14,11 +14,6 @@
             </div>
           </div>
         <% end %>
-        <% if user_signed_in? %>
-          <div id="follow-form-<%= @item.user.id %>">
-            <%= render 'shared/follow-and-unfollow', user: @item.user %>
-          </div>
-        <% end %>
       </div>
     </div>
     <button class="btn mt-4 ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#itemDetails" aria-expanded="false" aria-controls="itemDetails">
@@ -40,10 +35,6 @@
       <div class="item-detail">
         <p class="category">使用開始日</p>
         <P class="content"><%= @item.start_date %></P>
-      </div>
-      <div class="item-detail">
-        <p class="category">選んだ理由</p>
-        <P class="content"><%= safe_join(@item.reason&.split("\n") || [], tag(:br)) %></P>
       </div>
       <div class="detail-link-container">
         <%= link_to "商品詳細へ", item_path(@item), class: "btn detail-link" %>
