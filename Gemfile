@@ -42,6 +42,7 @@ gem 'rails-i18n'
 gem 'aws-sdk-s3', require: false
 # ページネーション
 gem 'kaminari'
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 # metaタグの設定
 gem 'meta-tags'
 # 検索機能
