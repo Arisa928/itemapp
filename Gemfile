@@ -40,7 +40,7 @@ gem 'devise'
 gem 'rails-i18n'
 # amazon s3
 gem 'aws-sdk-s3', require: false
-# ページネーション用kaminari
+# ページネーション
 gem 'kaminari'
 # metaタグの設定
 gem 'meta-tags'
