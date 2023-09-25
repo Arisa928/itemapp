@@ -19,7 +19,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-// コメント一覧ページにてガジェット詳細を開く・閉じる
+// コメント一覧ページの詳細開閉
 document.addEventListener('DOMContentLoaded', () => {
   const collapseButton = document.querySelector('[data-bs-toggle="collapse"]');
 
