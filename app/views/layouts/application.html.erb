@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GH732GMK39"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-GH732GMK39');
-    </script>
-
-    <title><%= content_for?(:title) ? yield(:title) + " | OshiGadge −推しガジェ−" : "OshiGadge −推しガジェ−" %></title>
+    <title><%= content_for?(:title) ? yield(:title) + " | Gamers Item" : "Gamers Item" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
