@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'static_pages/contact'
+  get 'static_pages/privacy_policy'
+  get 'static_pages/terms_of_service'
   root 'items#top'
 
   resources :items do
