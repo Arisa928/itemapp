@@ -1,17 +1,23 @@
 .title {
-  color: #393E46;
+  color: #e6b9eb;
   height: 400px;
 
+  .top_img {
+    width: 550px;
+    height: 550px;
+  }
+
   .wrapper {
-    background-color: rgba(229, 229, 229, 0.706);
     padding: 0 32px;
     height: 100%;
+    width: min-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 0;
+    padding: 0;
 
     .app-name {
-      text-align: center;
       margin-bottom: 80px;
 
       h1 {
@@ -67,6 +73,10 @@
     width: 45%;
     height: 132px;
   }
+  .top_img {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 // 画面幅768px以上の場合
@@ -103,4 +113,12 @@
       font-size: 1.5rem;
     }
   }
+}
+// スマートフォンで見たときは画像が表示されない
+@media only screen and (max-width: 750px) {
+  .wrapper { height: 100%;
+    margin: 0 auto !important; }
+  .top_img { display: none !important; }
+  .app-name { text-align: center !important; }
+  .description { text-align: center !important; }
 }

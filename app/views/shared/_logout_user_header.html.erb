@@ -6,16 +6,16 @@
           <%= image_tag "logo.jpg", size: "130x40" %>
         <% end %>
         <ul class="navbar-nav d-none d-lg-flex flex-row ms-4">
-          <li class="nav-item"><%= link_to "新着投稿一覧", items_path, class: "nav-link" %></li>
-          <li class="nav-item ms-4"><%= link_to "ユーザー一覧", users_path, class: "nav-link" %></li>
+          <li class="nav-item-list"><button class="btn btn-outline-info fs-4 fw-bold py-2"><%= link_to "新着投稿一覧", items_path, class: "nav-link-list text-info" %></button></li>
+          <li class="nav-item-list ms-4"><button class="btn btn-outline-info fs-4 fw-bold py-2"><%= link_to "ユーザー一覧", users_path, class: "nav-link-list text-info" %></button></li>
         </ul>
       </div>
       <div class="d-lg-none">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-outline-info dropdown-toggle bg-info" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end bg-secondary px-4 pt-3" aria-labelledby="dropdownMenuButton">
+          <ul class="dropdown-menu dropdown-menu-end bg-info px-4 pt-3" aria-labelledby="dropdownMenuButton">
             <li><%= link_to "新規登録", new_user_registration_path, class: "dropdown-item" %></li>
             <li><%= link_to "ログイン", new_user_session_path, class: "dropdown-item" %></li>
             <li><%= link_to "ユーザー一覧", users_path, class: "dropdown-item" %></li>

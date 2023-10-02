@@ -5,6 +5,10 @@ inherit_from:
 Rails:
   Enabled: true
 
+#文字制限を変更
+Metrics/LineLength:
+  Max: 120
+
 #rubocopで検証したくないフォルダを指定
 AllCops:
   Exclude:

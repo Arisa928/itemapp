@@ -5,10 +5,10 @@
 
   .detail-link {
     display: block;
-    background-color: #393E46;
+    background-color: #679EF1;
     text-align: center;
     border-radius: 5px;
-    color: #929AAB;
+    color: #FFFFFF;
     font-size: 1.3rem;
   }
 }
@@ -19,7 +19,7 @@
 
   .list-link {
     display: block;
-    background-color: #929AAB;
+    background-color: #679EF1;
     text-align: center;
     padding: 12px 0;
     color: #393E46;
@@ -34,8 +34,8 @@
 .actions {
 
   .btn {
-    background-color: #393E46;
-    color: #F7F7F7;
+    background-color: #63d3e5;
+    color: #FFFFFF;
     height: 4.5rem;
     font-size: 2rem;
     font-weight: 550;
@@ -52,10 +52,10 @@
 
   .edit-btn {
     display: block;
-    background-color: #393E46;
+    background-color: #679EF1;
     text-align: center;
     border-radius: 5px;
-    color: #929AAB;
+    color: #FFFFFF;
     font-size: 1.5rem;
     padding: 8px 0;
   }
@@ -65,10 +65,10 @@
 .edit-profile-btn-container {
 
   .edit-profile-btn {
-    background-color: #929AAB;
+    background-color: #63d3e5;
     text-align: center;
     border-radius: 5px;
-    color: #F7F7F7;
+    color: #FFFFFF;
     font-size: 1.1rem;
     padding: 3px 9px;
   }
@@ -79,10 +79,10 @@
   text-align: right;
 
   .item-new-registration-btn {
-    background-color: #929AAB;
+    background-color: #63d3e5;
     text-align: center;
     border-radius: 30px;
-    color: #F7F7F7;
+    color: #FFFFFF;
     font-size: 1.2rem;
     font-weight: 550;
     padding: 5px;
@@ -95,12 +95,5 @@
 
 // ガジェット削除／アカウント削除のリンク（ボタン）
 .delete-button:hover {
-  opacity: 0.7;
-}
-
-// フォローボタン
-.follow-btn:hover {
-  background-color: #F7F7F7;
-  color: #393E46;
   opacity: 0.7;
 }
