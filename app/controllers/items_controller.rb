@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destory]
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_item, only: %i(show edit update destroy)
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def top
@@ -86,18 +86,19 @@ class ItemsController < ApplicationController
   end
 
   private
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    def item_params
-      params.require(:item).permit(:user_id, :name, :start_date, :category_list, :detail, :image, :rakuten_url).merge(user_id: current_user.id)
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
-    def ensure_correct_user
-      if @item.user_id != current_user.id
-        flash[:alert] = "権限がありません"
-        redirect_to item_path
-      end
+  def item_params
+    params.require(:item).permit(:user_id, :name, :start_date, :category_list, :detail, :image, :rakuten_url).merge(user_id: current_user.id)
+  end
+
+  def ensure_correct_user
+    if @item.user_id != current_user.id
+      flash[:alert] = "権限がありません"
+      redirect_to item_path
     end
+  end
 end

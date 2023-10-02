@@ -6,11 +6,6 @@ class UsersController < ApplicationController
     case params[:order]
     when 'older'
       @items = User.all.order('created_at ASC').page(params[:page]).per(24)
-    when 'ranking'
-      @items = User.left_joins(:passive_relationships)
-                .group('users.id')
-                .order('COUNT(relationships.follower_id) DESC')
-                .page(params[:page]).per(24)
     when 'name_asc'
       @users = User.order('LOWER(name) ASC').page(params[:page]).per(24)
     when 'name_desc'
@@ -24,7 +19,7 @@ class UsersController < ApplicationController
       format.js
     end
   end
-  
+
   def show_myitems
     @user = User.find(params[:id])
     @items = @user.items

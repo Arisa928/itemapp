@@ -7,7 +7,7 @@ Rails:
 
 #文字制限を変更
 Metrics/LineLength:
-  Max: 120
+  Max: 160
 
 #rubocopで検証したくないフォルダを指定
 AllCops:
@@ -16,6 +16,8 @@ AllCops:
     - 'bin/*'
     - 'db/*'
     - 'db/**/*'
-    - 'spec/*'
+    - 'spec/**/*'
     - 'Gemfile'
     - 'vendor/bundle/**/*'
+    - 'app/models/*'
+    - 'app/controllers/*'

@@ -15,7 +15,7 @@ class Item < ApplicationRecord
 
   # 検索対象の設定
   def self.ransackable_attributes(auth_object = nil)
-    %w[name detail]
+    %w(name detail)
   end
 
   # 検索対象の関連テーブルの設定
