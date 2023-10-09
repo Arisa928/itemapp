@@ -4,9 +4,10 @@ orbs:
   heroku: circleci/heroku@2.0
 
 jobs:
+  build:
+    macos:
+      xcode: "14.3.1"
   rspec:
-    docker:
-      - image: cimg/ruby:3.1.4
     steps:
       - checkout
       - run: bundle exec rake db:create
@@ -18,8 +19,6 @@ jobs:
           name: Run rspec
           command: bundle exec rspec
   rubocop:
-    docker:
-      - image: cimg/ruby:3.1.4
     steps:
       - checkout
       - run: bundle config --local path vendor/bundle
