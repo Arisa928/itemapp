@@ -73,26 +73,30 @@
         </div>
       </div>
       <div class="comments">
-        <% @comments.each do |comment| %>
-          <div class="comment mb-4">
-            <div class="d-flex justify-content-between mb-2">
-              <div class="d-flex align-items-center">
-                <div class="icon-image-sm">
-                  <%= user_avatar_image_tag(comment.user) %>
+        <% if @comments.present? %>
+          <% @comments.each do |comment| %>
+            <div class="comment mb-4">
+              <div class="d-flex justify-content-between mb-2">
+                <div class="d-flex align-items-center">
+                  <div class="icon-image-sm">
+                    <%= user_avatar_image_tag(comment.user) %>
+                  </div>
+                  <div class="user-name-and-creationdate-sm">
+                    <p class="user-name-sm"><%= comment.user.name %></p>
+                    <p class="creationdate-sm"><%= comment.created_at.to_s(:default) %></p>
+                  </div>
                 </div>
-                <div class="user-name-and-creationdate-sm">
-                  <p class="user-name-sm"><%= comment.user.name %></p>
-                  <p class="creationdate-sm"><%= comment.created_at.to_s(:default) %></p>
+                <div class="d-flex align-items-end">
+                  <% if comment.user == current_user %>
+                    <%= link_to "削除", item_comment_path(comment.item, comment), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                  <% end %>
                 </div>
               </div>
-              <div class="d-flex align-items-end">
-                <% if comment.user == current_user %>
-                  <%= link_to "削除", item_comment_path(comment.item, comment), method: :delete, data: { confirm: "本当に削除しますか？" } %>
-                <% end %>
-              </div>
+              <P class="ps-2 fs-5"><%= safe_join(comment.content.split("\n"),tag(:br)) %></P>
             </div>
-            <P class="ps-2 fs-5"><%= safe_join(comment.content.split("\n"),tag(:br)) %></P>
-          </div>
+          <% end %>
+        <% else %>
+            <p>コメントはありません。</p>
         <% end %>
       </div>
 

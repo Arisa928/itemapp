@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     case params[:order]
     when 'older'
-      @items = User.all.order('created_at ASC').page(params[:page]).per(24)
+      @users = User.all.order('created_at ASC').page(params[:page]).per(24)
     when 'name_asc'
       @users = User.order('LOWER(name) ASC').page(params[:page]).per(24)
     when 'name_desc'

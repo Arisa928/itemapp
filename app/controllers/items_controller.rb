@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   def index
     case params[:order]
     when 'older'
-      @items = Item.all.order('created_at ASC').page(params[:page]).per(24)
+      @items = Item.all.order(created_at: :asc).page(params[:page]).per(24)
     when 'ranking'
       @items = Item.left_joins(:likes).group(:id).order('COUNT(likes.id) DESC').page(params[:page]).per(24)
     when 'name_asc'
@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
     when 'category_desc'
       @items = Kaminari.paginate_array(Item.all.sort_by { |g| g.category_list.first }.reverse).page(params[:page]).per(24)
     else 'new'
-      @items = Item.all.order('created_at DESC').page(params[:page]).per(24)
+      @items = Item.all.order(created_at: :desc).page(params[:page]).per(24)
     end
 
     respond_to do |format|

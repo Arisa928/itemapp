@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     collapseButton.addEventListener('click', () => {
       if (collapseButton.getAttribute('aria-expanded') === 'true') {
         console.log('開く');
-        collapseText.textContent = '▼ ガジェット詳細を閉じる';
+        collapseText.textContent = '▼ item詳細を閉じる';
       } else {
         console.log('閉じる');
-        collapseText.textContent = '▲ ガジェット詳細を見る';
+        collapseText.textContent = '▲ item詳細を見る';
       }
     });
   }
@@ -134,7 +134,7 @@ $(document).on('click', '#remove_rakuten_url_button', function(e) {
   $(this).hide();
 });
 
-// ガジェット編集ページ表示時に、楽天URLが設定されている場合に削除ボタンを表示する
+// item編集ページ表示時に、楽天URLが設定されている場合に削除ボタンを表示する
 $(document).on('turbolinks:load', function() {
   var selectedRakutenUrl = $('#item_rakuten_url').val()
 

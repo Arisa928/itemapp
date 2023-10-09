@@ -1,4 +1,4 @@
-// ガジェット／ユーザー一覧の共通
+// item／ユーザー一覧の共通
 .lists {
   margin: 15px 0;
 
@@ -9,7 +9,7 @@
   }
 }
 
-// ガジェット（ユーザー名+ガジェット）一覧
+// item（ユーザー名+item）一覧
 .post-container {
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,7 @@
   }
 }
 
-// ガジェット画像（小）
+// item画像（小）
 .item-image-sm {
   margin: 12px 0;
   padding: 0 4px;
@@ -55,7 +55,7 @@
   }
 }
 
-// ガジェット画像（中）
+// item画像（中）
 .item-image-md {
   width: 38%;
   height: 132px;
@@ -162,7 +162,7 @@
   }
 }
 
-// ガジェット詳細情報
+// item詳細情報
 .item-details-container {
   margin: 20px 0 35px 0;
 
