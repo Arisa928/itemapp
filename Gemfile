@@ -53,6 +53,8 @@ gem 'acts-as-taggable-on'
 gem 'rakuten_web_service'
 # ダミーデータ生成
 gem 'faker'
+# JavaScriptランタイム
+gem 'mini_racer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
