@@ -9,6 +9,8 @@ jobs:
       - image: cimg/ruby:3.1.4
     steps:
       - checkout
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
       - run:
           name: bundle install
           command: bundle install 
