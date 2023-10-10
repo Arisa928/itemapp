@@ -20,8 +20,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install libpq
-        command: brew install libpq
+          name: Install libpq
+          command: brew install libpq
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
@@ -36,8 +36,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install libpq
-        command: brew install libpq
+          name: Install libpq
+          command: brew install libpq
       - run: bundle config --local path vendor/bundle
       - run:
           name: bundle install
