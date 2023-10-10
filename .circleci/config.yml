@@ -7,7 +7,16 @@ jobs:
   build:
     macos:
       xcode: "14.3.1"
+    steps:
+      - checkout
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
   rspec:
+    macos:
+      xcode: "14.3.1"
     steps:
       - checkout
       - run: bundle exec rake db:create
@@ -19,6 +28,8 @@ jobs:
           name: Run rspec
           command: bundle exec rspec
   rubocop:
+    macos:
+      xcode: "14.3.1"
     steps:
       - checkout
       - run: bundle config --local path vendor/bundle
@@ -30,6 +41,8 @@ jobs:
           command: bundle exec rubocop 
   heroku_deploy:
     executor: heroku/default
+    macos:
+      xcode: "14.3.1"
     steps:
       - checkout
       - heroku/install
