@@ -1,15 +1,16 @@
-// 必要なモジュールをインポート
-const http = require('http');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000; // ポート番号を設定
 
-// サーバーオブジェクトの作成
-const server = http.createServer((req, res) => {
-  // リクエストを処理するコードをここに記述
-  res.statusCode = 200;
-  res.render('top.html.erb');
+// 静的ファイルの提供（例：CSS、JavaScript、画像など）
+app.use(express.static('public'));
+
+// トップページのルートを設定
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/items/top.html.erb'); // top.htmlは実際のビューファイルへのパスに置き換えてください
 });
 
-// サーバーを指定のポートでリスニング
-const port = process.env.PORT || 3000;
-server.listen(port, () => {
+// サーバーを起動
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
