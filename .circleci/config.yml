@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Install libpq
           command: brew install libpq
-      - run: bundle exec rake db:create
+      - run: bundle exec rake db:migrate
       - run: bundle exec rake db:schema:load
       - run:
           name: bundle install
