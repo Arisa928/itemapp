@@ -40,9 +40,9 @@ jobs:
           name: run rubocop
           command: bundle exec rubocop 
   heroku_deploy:
-    executor: heroku/default
     macos:
       xcode: "14.3.1"
+    executor: heroku/default
     steps:
       - checkout
       - heroku/install
