@@ -7,7 +7,7 @@ app.use(express.static('public'));
 
 // トップページのルートを設定
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/items/top.html.erb'); // top.htmlは実際のビューファイルへのパスに置き換えてください
+  res.render('top.html.erb'); 
 });
 
 // サーバーを起動
