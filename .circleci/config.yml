@@ -19,6 +19,9 @@ jobs:
       xcode: "14.3.1"
     steps:
       - checkout
+      - run:
+        name: Install libpq
+        command: brew install libpq
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run:
@@ -32,6 +35,9 @@ jobs:
       xcode: "14.3.1"
     steps:
       - checkout
+      - run:
+        name: Install libpq
+        command: brew install libpq
       - run: bundle config --local path vendor/bundle
       - run:
           name: bundle install
