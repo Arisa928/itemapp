@@ -14,5 +14,9 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "devDependencies": {}
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2"
+  }
 }
