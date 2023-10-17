@@ -13,7 +13,7 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.js=jsx"
+  "devDependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.18.6"
   }
 }
