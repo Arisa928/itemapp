@@ -2,6 +2,7 @@
   "name": "itemapp",
   "private": true,
   "dependencies": {
+    "@babel/plugin-transform-private-methods": "^7.22.5",
     "@popperjs/core": "^2.11.6",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -13,7 +14,5 @@
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
-  "devDependencies": {
-    "@babel/plugin-proposal-private-methods": "7.18.6"
-  }
+  "devDependencies": {}
 }
