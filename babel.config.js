@@ -77,6 +77,29 @@ module.exports = function(api) {
           async: false
         }
       ]
-    ].filter(Boolean)
+    ].filter(Boolean),
+    // babel-loader の設定を以下に追加
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    useBuiltIns: 'entry',
+                    corejs: 3,
+                  },
+                ],
+              ],
+            },
+          },
+        },
+      ],
+    },
   }
 }
