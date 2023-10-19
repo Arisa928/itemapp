@@ -26,6 +26,6 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "postinstall": "cd ./frontend && yarn && yarn run webpack --config ./webpack.config.js --mode production"
+    "postinstall": "yarn && yarn run webpack --config ./webpack.config.js --mode production"
   }
 }
