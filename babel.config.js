@@ -1,105 +1,43 @@
 module.exports = function(api) {
-  var validEnv = ['development', 'test', 'production']
-  var currentEnv = api.env()
-  var isDevelopmentEnv = api.env('development')
-  var isProductionEnv = api.env('production')
-  var isTestEnv = api.env('test')
-
-  if (!validEnv.includes(currentEnv)) {
-    throw new Error(
-      'Please specify a valid `NODE_ENV` or ' +
-        '`BABEL_ENV` environment variables. Valid values are "development", ' +
-        '"test", and "production". Instead, received: ' +
-        JSON.stringify(currentEnv) +
-        '.'
-    )
-  }
-
+  api.cache(true);
+  // 基本のBabel設定
+  const basePresets = [
+    [
+      '@babel/preset-env',
+      {
+        forceAllTransforms: true,
+        useBuiltIns: 'entry',
+        corejs: 3,
+        modules: false,
+        exclude: ['transform-typeof-symbol']
+      }
+    ]
+  ];
+  const basePlugins = [
+    'babel-plugin-macros',
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-transform-destructuring',
+    [
+      '@babel/plugin-transform-class-properties',
+      {
+        loose: true
+      }
+    ],
+    [
+      '@babel/plugin-transform-object-rest-spread',
+      {
+        useBuiltIns: true
+      }
+    ],
+    // 他のプラグイン...
+  ];
+  // 新しい設定
+  const newPresets = ["@babel/preset-env"];
+  // 元の設定と新しい設定をマージ
+  const presets = [...basePresets, ...newPresets];
+  const plugins = basePlugins;
   return {
-    presets: [
-      isTestEnv && [
-        '@babel/preset-env',
-        {
-          targets: {
-            node: 'current'
-          }
-        }
-      ],
-      (isProductionEnv || isDevelopmentEnv) && [
-        '@babel/preset-env',
-        {
-          forceAllTransforms: true,
-          useBuiltIns: 'entry',
-          corejs: 3,
-          modules: false,
-          exclude: ['transform-typeof-symbol']
-        }
-      ]
-    ].filter(Boolean),
-    plugins: [
-      'babel-plugin-macros',
-      '@babel/plugin-syntax-dynamic-import',
-      isTestEnv && 'babel-plugin-dynamic-import-node',
-      '@babel/plugin-transform-destructuring',
-      [
-        '@babel/plugin-transform-class-properties',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-transform-object-rest-spread',
-        {
-          useBuiltIns: true
-        }
-      ],
-      [
-        '@babel/plugin-transform-private-methods',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-transform-private-property-in-object',
-        {
-          loose: true
-        }
-      ],
-      [
-        '@babel/plugin-transform-runtime',
-        {
-          helpers: false
-        }
-      ],
-      [
-        '@babel/plugin-transform-regenerator',
-        {
-          async: false
-        }
-      ]
-    ].filter(Boolean),
-    // babel-loader の設定を以下に追加
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    useBuiltIns: 'entry',
-                    corejs: 3,
-                  },
-                ],
-              ],
-            },
-          },
-        },
-      ],
-    },
-  }
-}
+    presets,
+    plugins,
+  };
+};
