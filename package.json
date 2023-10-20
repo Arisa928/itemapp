@@ -26,6 +26,6 @@
     "yarn": "1.x"
   },
   "scripts": {
-    "postinstall": "yarn && yarn run webpack --config ./webpack.config.js --mode production"
-  }
+    "postinstall": "if [ ! -f .build_completed ]; then yarn run webpack --config ./webpack.config.js --mode production && touch .build_completed; fi"
+  }  
 }
