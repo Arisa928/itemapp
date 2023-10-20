@@ -4,7 +4,7 @@
   "dependencies": {
     "@babel/plugin-transform-private-methods": "^7.22.5",
     "@popperjs/core": "^2.11.6",
-    "@rails/actioncable": "^6.0.0",
+    "@rails/actioncable": "^7.1.1",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.4",
@@ -27,5 +27,5 @@
   },
   "scripts": {
     "postinstall": "if [ ! -f .build_completed ]; then yarn run webpack --config ./webpack.config.js --mode production && touch .build_completed; fi"
-  }  
+  }
 }
