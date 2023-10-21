@@ -28,7 +28,8 @@
   },
   "engines": {
     "yarn": "1.x",
-    "node": "20.x"
+    "node": "20.x",
+    "npm": "10.x"
   },
   "scripts": {
     "start": "node ./itemapp/app/javascript/packs/application.js",
