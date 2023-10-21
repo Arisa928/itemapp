@@ -20,5 +20,10 @@ module.exports = {
         ]
       }
     ]
+  },
+  resolve: {
+    alias: {
+      'channels': path.resolve(__dirname, 'app/javascript/channels/index.js'),
+    }
   }
 };
