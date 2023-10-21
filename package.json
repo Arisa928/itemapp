@@ -33,7 +33,7 @@
     "npm": "10.x"
   },
   "scripts": {
-    "start": "node ./itemapp/app/javascript/packs/application.js",
+    "start": "node server.js",
     "test": "mocha test/*.js",
     "build": "webpack --config ./webpack.config.js --mode production"
   }
