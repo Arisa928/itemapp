@@ -34,6 +34,6 @@
   "scripts": {
     "start": "node ./itemapp/app/javascript/packs/application.js",
     "test": "mocha test/*.js",
-    "build": "node_modules/webpack/bin/webpack --config ./webpack.config.js --mode production"
+    "build": "webpack --config ./webpack.config.js --mode production"
   }
 }
