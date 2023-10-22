@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    application: 'server.js',
+    application: './app/javascript/packs/application.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'), // バンドルされたファイルの出力先ディレクトリ
