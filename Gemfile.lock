@@ -370,7 +370,7 @@ DEPENDENCIES
   acts-as-taggable-on
   aws-sdk-s3
   bootsnap (>= 1.4.4)
-  bootstrap (~> 5.0.2)
+  bootstrap
   bootstrap5-kaminari-views (~> 0.0.1)
   byebug
   capybara (>= 3.26)
