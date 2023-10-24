@@ -8,8 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import 'channels';
 
+import "bootstrap";
 import "../stylesheets/application.scss";
-import 'bootstrap/dist/js/bootstrap.bundle';
 
 // Rspecテストのエラー回避として、jQueryを使うために追記
 import $ from 'jquery';
