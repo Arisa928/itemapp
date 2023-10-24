@@ -16,7 +16,7 @@ module.exports = {
         use: [
           'style-loader',  // CSSをHTMLファイル内に注入
           'css-loader',    // CSSファイルを読み込む
-          'sass-loader'    // SCSSをCSSに変換
+          'sass-loader'    // SCSSをCSS変換
         ]
       }
     ]
