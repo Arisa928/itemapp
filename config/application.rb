@@ -32,5 +32,6 @@ module Itemapp
       Time::DATE_FORMATS[:default] = "%Y年%m月%d日 %H:%M"
       Date::DATE_FORMATS[:default] = "%Y年%m月%d日"
     end
+    config.assets.initialize_on_precompile = false  #デプロイエラー対策で追記
   end
 end
