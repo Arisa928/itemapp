@@ -10,16 +10,11 @@ module.exports = {
   },
   mode: 'production',
   module: {
-    rules: [
+    loaders: [
       {
-        test: /\.scss$/,
-        loader : 'babel-loader',
+        test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          'style-loader',  // CSSをHTMLファイル内に注入
-          'css-loader',    // CSSファイルを読み込む
-          'sass-loader'    // SCSSをCSS変換
-        ]
+          loader: 'babel-loader',
       }
     ]
   },
