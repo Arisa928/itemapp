@@ -10,17 +10,19 @@ module.exports = {
   },
   mode: 'production',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        use: {
           loader: 'babel-loader',
-      }
-    ]
+        },
+      },
+    ],
   },
   resolve: {
     alias: {
       'channels': path.resolve(__dirname, 'app/javascript/channels/index.js'),
-    }
-  }
+    },
+  },
 };
