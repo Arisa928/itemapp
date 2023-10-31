@@ -18,5 +18,15 @@
     "webpack": "4",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "engines": {
+    "yarn": "1.x",
+    "node": "20.x",
+    "npm": "10.x"
+  },
+  "scripts": {
+    "start": "node ./app/javascript/packs/application.js",
+    "test": "mocha test/*.js",
+    "build": "webpack --config ./webpack.config.js --mode production"
   }
 }
