@@ -8,25 +8,15 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.4",
     "bootstrap": "^5.2.3",
+    "express": "^4.17.3",
     "jquery": "^3.6.4",
-    "turbolinks": "^5.2.0",
-    "express": "^4.17.3"
+    "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
     "@babel/plugin-transform-private-methods": "^7.22.5",
-    "webpack": "4",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
-  },
-  "engines": {
-    "yarn": "1.x",
-    "node": "20.x",
-    "npm": "10.x"
-  },
-  "scripts": {
-    "start": "node ./app/javascript/packs/application.js",
-    "test": "mocha test/*.js",
-    "build": "webpack --config ./webpack.config.js --mode production"
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3"
   }
 }

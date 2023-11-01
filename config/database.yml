@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: items
+  database: <%= ENV['MYSQL_DATABASE'] %>
