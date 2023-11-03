@@ -4,8 +4,6 @@ default: &default
   pool: 5
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
 
 development:
   <<: *default
@@ -17,4 +15,5 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['MYSQL_DATABASE'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  port: 5432

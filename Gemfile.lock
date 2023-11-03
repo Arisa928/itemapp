@@ -178,6 +178,7 @@ GEM
       libv8-node (~> 18.16.0.0)
     minitest (5.20.0)
     msgpack (1.7.2)
+    mysql2 (0.5.5)
     net-imap (0.4.1)
       date
       net-protocol
@@ -384,6 +385,7 @@ DEPENDENCIES
   listen (~> 3.3)
   meta-tags
   mini_racer
+  mysql2
   pg
   pry-rails
   puma (~> 5.0)
