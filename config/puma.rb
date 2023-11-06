@@ -44,4 +44,4 @@ plugin :tmp_restart
 
 # config/puma.rb
 workers 0
-silence_single_worker_warning true
+silence_single_worker_warning 
