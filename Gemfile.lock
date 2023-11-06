@@ -386,6 +386,9 @@ DEPENDENCIES
   meta-tags
   mini_racer
   mysql2
+  net-imap
+  net-pop
+  net-smtp
   pg
   pry-rails
   puma (~> 5.0)

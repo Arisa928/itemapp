@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'bootstrap', '~> 5.3.0'
 
 gem 'mysql2'
+gem 'net-imap'
+gem 'net-pop'
+gem 'net-smtp'
 
 # 環境変数設定
 gem 'dotenv-rails'
