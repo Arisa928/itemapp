@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.7', '>= 6.1.7.4'
+gem 'rails', '~> 7.0.4'
 # Use mysql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -12,7 +12,9 @@ gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker'
+# gem 'webpacker'
+#webpackerからgem 'jsbundling-rails'に変更
+gem 'jsbundling-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -29,11 +31,6 @@ gem 'image_processing', '~> 1.2'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'bootstrap', '~> 5.3.0'
-
-gem 'mysql2'
-gem 'net-imap'
-gem 'net-pop'
-gem 'net-smtp'
 
 # 環境変数設定
 gem 'dotenv-rails'
