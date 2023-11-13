@@ -11,7 +11,7 @@ module.exports = {
   devtool: "source-map",
   entry: {
     application: [ "./app/javascript/packs/application.js",
-                 "./app/assets/stylesheets/application.css"
+                 "./app/assets/stylesheets/application.scss"
                 ],
     custom: './app/javascript/stylesheets/_custom.scss'
   },
