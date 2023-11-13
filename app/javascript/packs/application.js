@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "@rails/actioncable";
 import "bootstrap";
-import "@styles/application.scss";
 
 // Rspecテストのエラー回避として、jQueryを使うために追記
 import $ from 'jquery';

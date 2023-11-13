@@ -11,7 +11,7 @@ module.exports = {
   devtool: "source-map",
   entry: {
     application: [ "./app/javascript/packs/application.js",
-                 "./app/assets/stylesheets/application.scss"
+                 "./app/assets/stylesheets/application.css"
                 ],
     custom: './app/javascript/stylesheets/_custom.scss'
   },
@@ -32,7 +32,7 @@ module.exports = {
     // Add additional file types
     extensions: ['.js', '.jsx', '.scss', '.css'],
     alias: {
-      '@styles': path.resolve(__dirname, 'app/javascript/stylesheets'),
+      '@styles': path.resolve(__dirname, 'app/javascript/channels/index.js'),
     },
   },
   plugins: [
