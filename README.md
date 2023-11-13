@@ -1,24 +1,38 @@
-# README
+・想定ユーザー
+ゲーマー
+・解決する課題
+ほしい商品を検索してもゲーマー目線の使用感が分からない。
+色々な人の感想を聞きたい
+ゲーマーの意見が集まるアプリがない
+・解決方法
+実際に使ってみた感想を紹介するアプリを作成
+・製品
+このアプリはゲーマーのためのおすすめ紹介アプリです。
+マウスやマイク、キーボードなどゲームに使用するようなアイテムに関して実際の使用感を知ることでより自身の目的にあうものを購入できるように手助けします。
+投稿者は楽天APIで商品の購入リンクを作成でき、すぐ購入することが可能です。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+機能
+・ユーザー登録/削除機能
+・ログイン/ログアウト機能
+・ゲストログイン機能
+・ユーザー情報の表示/編集機能
+・検索機能(ユーザー名、カテゴリー、商品名で検索可能)
+　カテゴリーをクリックすることでそのカテゴリーが付いたガジェットのみを一覧表示可能
+・他のユーザーの投稿にコメントする機能
+・他のユーザーの投稿にいいねする機能
+・楽天市場の購入リンクの設定機能
+    * 商品登録時にその商品の楽天市場での購入リンクを設定可能
+    * 商品詳細ページにて楽天市場リンクをクリックすることでその商品の楽天市場ページへ遷移
+・投稿一覧、ユーザー一覧ページでの並び替え機能
+    * 新着順、古い順、人気順、ガジェット名、カテゴリー名での並び替えが可能
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+使用技術
+* Ruby (3.1.4)
+* Ruby on Rails (6.1.7.4)
+* Bootstrap
+* JavaScript
+* jQuery
+* Heroku
+* AWS（S3）
+* RakutenAPI
