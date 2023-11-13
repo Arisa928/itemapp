@@ -32,7 +32,7 @@ module.exports = {
     // Add additional file types
     extensions: ['.js', '.jsx', '.scss', '.css'],
     alias: {
-      'channels': path.resolve(__dirname, 'app/javascript/channels/index.js'),
+      '@styles': path.resolve(__dirname, 'app/javascript/stylesheets'),
     },
   },
   plugins: [
