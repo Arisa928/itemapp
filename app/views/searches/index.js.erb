@@ -1,0 +1,23 @@
+$('#search-result').empty();
+
+<% if @items.present? %>
+  $('#search-result').html('<%= escape_javascript(render partial: 'shared/search_item_page', locals: { items: @items }) %>');
+<% elsif @users.present? %>
+  $('#search-result').html('<%= escape_javascript(render partial: 'shared/search_user_page', locals: { users: @users }) %>');
+<% else %>
+  $('#search-result').html('<p class="text-center fs-4">条件に一致する検索結果はありません。</p>');
+<% end %>
+
+// 非同期通信成功後にクラスの変化を適用
+var model = "<%= @model %>";
+$('#item-link').removeClass('active-link').addClass('inactive-link');
+$('#user-link').removeClass('active-link').addClass('inactive-link');
+$('#category-link').removeClass('active-link').addClass('inactive-link');
+
+if (model === 'items') {
+  $('#item-link').removeClass('inactive-link').addClass('active-link');
+} else if (model === 'users') {
+  $('#user-link').removeClass('inactive-link').addClass('active-link');
+} else if (model === 'categories') {
+  $('#category-link').removeClass('inactive-link').addClass('active-link');
+}

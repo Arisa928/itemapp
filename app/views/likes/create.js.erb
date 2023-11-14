@@ -1,0 +1,5 @@
+<% if @custom_view == 'other' %>
+  $("#likes-<%= @item.id %>").html("<%= escape_javascript(render partial: 'shared/likes', locals: { item: @item }) %>");
+<% elsif @custom_view == 'show' %>
+  $("#likes-<%= @item.id %>").html("<%= escape_javascript(render partial: 'shared/likes_and_liked_users', locals: { item: @item }) %>");
+<% end %>

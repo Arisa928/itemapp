@@ -29,6 +29,37 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
+
+# 非同期通信の処理を待つためのwait_for_ajaxを使用するための設定
+require 'support/wait_for_ajax'
+
+require 'capybara/rspec'
+require 'selenium-webdriver'
+
+Capybara.register_driver :selenium_chrome do |app|
+  # ダウンロードしたChromeDriverのパスを指定
+  Capybara::Selenium::Driver.new(app, browser: :chrome, driver_path: '114')
+end
+# テストスイートでChromeDriverを使用する
+Capybara.javascript_driver = :selenium_chrome
+
+# Capybaraのデフォルト最大待機時間を5秒に設定
+Capybara.default_max_wait_time = 5
+
+# ヘッドレスモードでの設定
+Capybara.register_driver :selenium_chrome_headless do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+
+  options.add_argument('--headless')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--disable-gpu')
+  options.add_argument('--window-size=1400,1400')
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+end
+
+Capybara.javascript_driver = :selenium_chrome_headless
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -60,4 +91,19 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include FactoryBot::Syntax::Methods
+
+  # システムスペックテストのためのrack_test
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
+
+  # JavaScript を使用するシステムテストのための selenium_chrome_headless
+  config.before(:each, type: :system, js: true) do
+    driven_by :selenium_chrome_headless
+  end
+
+  # deviseのテストヘルパー
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :system
 end

@@ -1,0 +1,70 @@
+<% content_for :title, "#{@user.name}さんのitem一覧" %>
+<div class="container mt-5">
+  <div class="responsive-container-720">
+    <div class="user-info-and-link-profile">
+      <div class="icon-image-lg">
+        <%= user_avatar_image_tag(@user) %>
+        <p><%= @user.name %></p>
+      </div>
+      <% if @user == current_user then %>
+        <div class="edit-profile-btn-container">
+          <%= link_to "プロフィールを編集", edit_profile_user_path(@user.id), class: "btn edit-profile-btn" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="inroduction">
+      <p><%= @user.introduction ? safe_join(@user.introduction.split("\n"), tag(:br)) : '' %></p>
+    </div>
+    <div class="row mb-5">
+      <div class="col text-center border-start border-end border-secondary border-2">
+        <P class="fs-6">登録数</P>
+        <P class="fw-bold fs-5"><%= @items.count %></P>
+      </div>
+    </div>
+    <div class="mypage-link-lists row justify-content-center">
+      <div class="col">
+        <p class="current-page text-center"><span>My Item</span></p>
+      </div>
+    </div>
+    <div class="myitem-lists">
+      <%# １商品に複数カテゴリーの場合でも１カテゴリー毎に表示 %>
+      <% category_items = @items.flat_map { |item| item.category_list.map { |category| [category, item] } }.group_by(&:first) %>
+      <% category_items.each do |category, items_with_category| %>
+        <div class="category-container">
+          <h4><%= category %></h4>
+          <% items_with_category.each do |_, item| %>
+            <div class="myitem-detail mt-4">
+              <% if item.image.present? %>
+                <div class="item-image" >
+                  <%= image_tag item.image %>
+                </div>
+              <% end %>
+              <div class="item-name">
+                <h5><%= item.name %></h5>
+              </div>
+              <%# いいねコメント欄 %>
+                <div class="likes-and-comments-container d-flex fs-4">
+                  <div class="likes" id="likes-<%= item.id %>">
+                    <%= render partial: 'shared/likes', locals: {item: item} %>
+                  </div>
+                  <div class="comments">
+                    <%= link_to item_comments_path(item.id), class: "ms-5" do %>
+                      <i class="fa-regular fa-message me-2" style="color: #393e46;"></i> <span><%= item.comments.count %></span>
+                    <% end %>
+                  </div>
+                </div>
+              <div class="detail-link-container">
+                <%= link_to "投稿詳細へ", item_path(item), class: "btn detail-link" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <% if current_user == @user %>
+      <div class="item-new-registration-btn-container">
+        <%= link_to "新規登録", new_item_path, class: "btn item-new-registration-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

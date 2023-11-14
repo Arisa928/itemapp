@@ -1,0 +1,30 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      gadget: 'item'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        name: 'ユーザー名'
+        new_password: '新しいパスワード'
+        new_password_confirmation: '新しいパスワード確認'
+        current_password: '現在のパスワード'
+        remember_me: 'ログイン状態を保持する'
+      gadget:
+        start_date: '使用開始日'
+        detail: 'itemの詳細'
+        name: 'item名'
+        category_list: "カテゴリー"
+    errors:
+      messages:
+        taken: "はすでに使用されています"
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."

@@ -1,0 +1,124 @@
+.title {
+  color: #e6b9eb;
+  height: 400px;
+
+  .top_img {
+    width: 550px;
+    height: 550px;
+  }
+
+  .wrapper {
+    padding: 0 32px;
+    height: 100%;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    .app-name {
+      margin-bottom: 80px;
+
+      h1 {
+        font-size: 5.6rem;
+        margin-bottom: 0;
+      }
+
+      h4 {
+        font-size: 2.4rem;
+      }
+    }
+
+    .description {
+      text-align: center;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// 検索欄
+.search-border {
+  width: 60%;
+  margin: 0 auto 0;
+}
+
+// 一覧部分タイトル
+.lists-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  a {
+    color: #679EF1;
+    font-size: 1.2rem;
+  }
+}
+
+
+// 画面幅500px以上の場合
+@media screen and (min-width:500px) {
+
+  .item-image-md {
+    width: 45%;
+    height: 132px;
+  }
+  .top_img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+// 画面幅768px以上の場合
+@media screen and (min-width:768px) {
+
+  .title {
+    height: 500px;
+
+    .wrapper {
+      .app-name {
+        h1 {
+          font-size: 8.8rem;
+        }
+
+        h4 {
+          font-size: 4.0rem;
+        }
+      }
+
+      .description {
+        p {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+
+  .lists-title {
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+// スマートフォンで見たときは画像が表示されない
+@media only screen and (max-width: 750px) {
+  .wrapper { height: 100%;
+    margin: 0 auto !important; }
+  .top_img { display: none !important; }
+  .app-name { text-align: center !important; }
+  .description { text-align: center !important; }
+}

@@ -1,24 +1,45 @@
-# README
+・想定ユーザー <br>
+ゲーマー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・解決する課題 <br>
+ほしい商品を検索してもゲーマー目線の使用感が分からない。
 
-Things you may want to cover:
+・色々な人の感想を聞きたい <br>
+ゲーマーの意見が集まるアプリがない
 
-* Ruby version
+・解決方法 <br>
+実際に使ってみた感想を紹介するアプリを作成
 
-* System dependencies
+・製品 <br>
+このアプリはゲーマーのためのおすすめ紹介アプリです。 <br>
+マウスやマイク、キーボードなどゲームに使用するようなアイテムに関して実際の使用感を知ることでより自身の目的にあうものを購入できるように手助けします。 <br>
+投稿者は楽天APIで商品の購入リンクを作成でき、すぐ購入することが可能です。 <br>
 
-* Configuration
 
-* Database creation
+機能 <br>
+・ユーザー登録/削除機能 <br>
+・ログイン/ログアウト機能 <br>
+・ゲストログイン機能 <br>
+・ユーザー情報の表示/編集機能 <br>
+・検索機能(ユーザー名、カテゴリー、商品名で検索可能) <br>
+　カテゴリーをクリックすることでそのカテゴリーが付いたガジェットのみを一覧表示可能 <br>
+・他のユーザーの投稿にコメントする機能 <br>
+・他のユーザーの投稿にいいねする機能 <br>
+・楽天市場の購入リンクの設定機能 <br>
+    * 商品登録時にその商品の楽天市場での購入リンクを設定可能 <br>
+    * 商品詳細ページにて楽天市場リンクをクリックすることでその商品の楽天市場ページへ遷移 <br>
+・投稿一覧、ユーザー一覧ページでの並び替え機能 <br>
+    * 新着順、古い順、人気順、ガジェット名、カテゴリー名での並び替えが可能 <br>
 
-* Database initialization
+使用技術 <br>
+* Ruby (3.2.2) <br>
+* Ruby on Rails (7.0.8) <br>
+* Bootstrap <br>
+* JavaScript <br>
+* Heroku <br>
+* AWS（S3） <br>
+* RakutenAPI <br>
 
-* How to run the test suite
+ER図
+![ER図](https://github.com/Arisa928/itemapp/assets/124275715/0c5f90a0-6898-427a-bc5a-6c0c024adba8)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

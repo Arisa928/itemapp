@@ -1,18 +1,20 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.4'
+ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.7', '>= 6.1.7.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+gem 'rails', '~> 7.0.4'
+# Use mysql as the database for Active Record
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker'
+# gem 'webpacker'
+#webpackerからgem 'jsbundling-rails'に変更
+gem 'jsbundling-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -22,11 +24,13 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+# 画像まわり
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'bootstrap', '~> 5.3.0'
 
 # 環境変数設定
 gem 'dotenv-rails'
@@ -38,18 +42,21 @@ gem 'devise'
 gem 'rails-i18n'
 # amazon s3
 gem 'aws-sdk-s3', require: false
-# ページネーションの実装のためのkaminari
+# ページネーション
 gem 'kaminari'
+gem 'bootstrap5-kaminari-views', '~> 0.0.1'
 # metaタグの設定
 gem 'meta-tags'
 # 検索機能
 gem 'ransack'
-# タグ付け機能
+# タグ管理機能
 gem 'acts-as-taggable-on'
 # 楽天API
 gem 'rakuten_web_service'
 # ダミーデータ生成
 gem 'faker'
+# JavaScriptランタイム
+gem 'mini_racer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -75,7 +82,6 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

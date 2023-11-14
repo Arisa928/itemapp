@@ -1,0 +1,24 @@
+<% if current_user && item.liked_by?(current_user) %>
+  <%= link_to item_likes_path(item, custom_view: 'show'), method: :delete, remote: true, class: 'like-button' do %>
+    <i class="fas fa-thumbs-up me-2" style="color: #393E46;"></i>
+  <% end %>
+  <%= link_to liked_users_item_path(item), class: 'like-button' do %>
+    <P class="ms-3"><strong><%= item.likes.count %></strong> 件のいいね</P>
+  <% end %>
+<% else %>
+  <% if user_signed_in? %>
+    <%= link_to item_likes_path(item, custom_view: 'show'), method: :post, remote: true, class: 'like-button' do %>
+      <i class="far fa-thumbs-up me-2"></i>
+    <% end %>
+    <%= link_to liked_users_item_path(item), class: 'like-button' do %>
+      <P class="ms-3"><strong><%= item.likes.count %></strong> 件のいいね</P>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, class: 'like-button' do %>
+      <i class="far fa-thumbs-up me-2"></i>
+    <% end %>
+    <%= link_to liked_users_item_path(item), class: 'like-button' do %>
+      <P class="ms-3"><strong><%= item.likes.count %></strong> 件のいいね</P>
+    <% end %>
+  <% end %>
+<% end %>

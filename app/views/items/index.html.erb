@@ -1,0 +1,23 @@
+<% content_for :title, "投稿一覧" %>
+<div class="container mt-80">
+  <h2 class="form-title">投稿一覧</h2>
+  <div class="d-flex">
+    <div class="btn-group dropdown ms-auto">
+      <button class="btn btn-lg dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        並び替え
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end" id="dropdown_menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to "新着順", items_path(order: 'new'), class: "active dropdown-item text-dark", id: "new_order", remote: true %></li>
+        <li><%= link_to "古い順", items_path(order: 'older'), class: "dropdown-item text-dark", id: "older_order", remote: true %></li>
+        <li><%= link_to "人気順", items_path(order: 'ranking'), class: "dropdown-item text-dark", id: "ranking_order", remote: true %></li>
+        <li><%= link_to "昇順(アイテム名)", items_path(order: 'name_asc'), class: "dropdown-item text-dark", id: "name_asc_order", remote: true %></li>
+        <li><%= link_to "降順(アイテム名)", items_path(order: 'name_desc'), class: "dropdown-item text-dark", id: "name_desc_order", remote: true %></li>
+        <li><%= link_to "昇順(カテゴリー)", items_path(order: 'category_asc'), class: "dropdown-item text-dark", id: "category_asc_order", remote: true %></li>
+        <li><%= link_to "降順(カテゴリー)", items_path(order: 'category_desc'), class: "dropdown-item text-dark", id: "category_desc_order", remote: true %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lists">
+    <%= render 'shared/items_index_order', items: @items %>
+  </div>
+</div>
