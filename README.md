@@ -39,3 +39,7 @@
 * Heroku <br>
 * AWS（S3） <br>
 * RakutenAPI <br>
+
+ER図
+![ER図](https://github.com/Arisa928/itemapp/assets/124275715/0c5f90a0-6898-427a-bc5a-6c0c024adba8)
+
