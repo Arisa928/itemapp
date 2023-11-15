@@ -38,8 +38,8 @@ TOPページ
 ・ Heroku <br>
 ・ AWS（S3） <br>
 ・ RakutenAPI <br>
-・　Rspec <br>
-・　Rubocop <br>
+・ Rspec <br>
+・ Rubocop <br>
 
 
 ER図
