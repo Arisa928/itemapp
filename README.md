@@ -1,5 +1,6 @@
 <h1>作品</h1>
 サイトURL : https://itemapp-6f9971ff2865.herokuapp.com/
+<img width="1440" alt="スクリーンショット 2023-11-15 22 58 11" src="https://github.com/Arisa928/itemapp/assets/124275715/765f1762-62e6-4373-a040-a1467823fe03">
 
 <h2>アプリについて</h2>
 
@@ -23,14 +24,19 @@
     * 新着順、古い順、人気順、ガジェット名、カテゴリー名での並び替えが可能 <br>
 
 <h2>使用技術</h2>
-* Ruby (3.2.2) <br>
-* Ruby on Rails (7.0.8) <br>
-* Bootstrap <br>
-* JavaScript <br>
-* Heroku <br>
-* AWS（S3） <br>
-* RakutenAPI <br>
+・ Ruby (3.2.2) <br>
+・ Ruby on Rails (7.0.8) <br>
+・ Bootstrap <br>
+・ JavaScript <br>
+・ Heroku <br>
+・ AWS（S3） <br>
+・ RakutenAPI <br>
+・　Rspec <br>
+・　Rubocop <br>
+
 
 ER図
 ![ER図](https://github.com/Arisa928/itemapp/assets/124275715/0c5f90a0-6898-427a-bc5a-6c0c024adba8)
 
+<h3>今後の課題</h3>
+ユーザー問い合わせフォームを実装し、サイト上から問い合わせできるようにすることでユーザーいいねした投稿一覧
