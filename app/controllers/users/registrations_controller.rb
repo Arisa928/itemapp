@@ -8,18 +8,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
       case params[:form_type]
       when 'profile_edit'
         flash[:notice] = "プロフィール情報を更新しました"
-        redirect_to myitems_user_path(current_user.id) && return
+        redirect_to myitems_user_path(current_user.id) and return
       when 'account_edit'
         bypass_sign_in(resource) if sign_in_after_change_password?
         flash[:notice] = "アカウント情報を更新しました"
-        redirect_to account_user_path(current_user.id) && return
+        redirect_to account_user_path(current_user.id) and return
       end
     else
       case params[:form_type]
       when 'profile_edit'
-        render 'users/edit' && return
+        render 'users/edit_profile' and return
       when 'account_edit'
-        render :edit && return
+        render :edit and return
       end
     end
   end
