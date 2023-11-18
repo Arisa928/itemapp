@@ -2,8 +2,7 @@
 サイトURL : https://itemapp-6f9971ff2865.herokuapp.com/
 
 TOPページ
-![Uploading スクリーンショット 2023-11-19 2.29.29.png…]()
-
+<img width="1422" alt="スクリーンショット 2023-11-19 2 29 29" src="https://github.com/Arisa928/itemapp/assets/124275715/403786a0-540d-4875-9581-8eb376f8fa4e">
 
 <h2>アプリについて</h2>
 
